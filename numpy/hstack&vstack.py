@@ -19,11 +19,3 @@ print ("v = ", v)
 
 c = np.arange(24).reshape(4, 6)  # 4 * 6 = 24
 print ("\n\nc = ", c)
-
-
-
-# there is some error in the below  lines
-#b = np.hstack((c, 2))               # we have to divide in such a way so that it must be exactly partitioned
-#print ("b(after hstack(2) ) = ", b)  
-#c = np.vstack((c, 3))
-#print ("c(after hstack(3) ) = ", c)

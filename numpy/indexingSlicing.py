@@ -18,3 +18,5 @@ print ("Fourth column = ", a[:,3])
 print ("Fifth column = ", a[:,4])
 
 print ("a[2,:1] = ", a[2,:3]) # it means select from row 2 the next 3 values, i.e: 10,11,12 
+
+input("press any key to exit.")

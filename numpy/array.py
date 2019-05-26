@@ -14,6 +14,9 @@ print ("Data type  of Array is : ", npArray1.dtype)
 print ("Total no of elements is : ", npArray1.size)
 print ("Size of each array item is : ", npArray1.itemsize)
 print ("Array Size is : ", npArray1.size * npArray1.itemsize, " Bytes.", end = "\n\n")
+print ("Array last element is :", npArray1[-1])
+print ("Array second last element is :", npArray1[-2])
+print ("Array third last element is :", npArray1[-3])
 
 npArray2 = np.array([[1, 2, 3],
                      [4, 5, 6]])       #2D Array of order 2 X 3

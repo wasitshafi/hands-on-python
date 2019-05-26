@@ -22,7 +22,7 @@ while(True):
    #    break   
    
     # or use  shorthand form 
-    if (cv2.waitKey(1) == ord('q') & 0xff ):
+    if (cv2.waitKey(1) & 0xff == ord('q')):
          break
 cap.release()
 cv2.destroyAllWindows()

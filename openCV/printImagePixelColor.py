@@ -14,7 +14,7 @@ def MyMouseEvent(event, x, y, flat, param):
         font = cv2.FONT_HERSHEY_SIMPLEX
         image = cv2.imread("cards.jpg", 1)
         cv2.putText(image, msgBGR, (5, 15), font, .5, (34, 34, 178), 2)  
-        cv2. putText(image, msgXY, (5, 35), font, .5, (34, 34, 178), 2)
+        cv2.putText(image, msgXY, (5, 35), font, .5, (34, 34, 178), 2)
         cv2.imshow("Image", image)
 
 image = cv2.imread("cards.jpg", 1)

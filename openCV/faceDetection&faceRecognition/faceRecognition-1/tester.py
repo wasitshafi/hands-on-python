@@ -1,5 +1,5 @@
 import cv2
-
+import spreadSheet as sp
 def generate_dataset(img, id, img_id):
     cv2.imwrite("dataset/user." + str(id) + "." + str(img_id) + ".jpg", img)
 
@@ -26,20 +26,25 @@ def draw_boundary(img, classifier, scaleFactor, minNeighbours, color,text, clf):
         """
         if( id == 1):
            cv2.putText(img, "shahid", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+           sp.markAttendence(id)
         elif( id == 2):
            cv2.putText(img, "salman", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+           sp.markAttendence(id)
         elif( id == 3):
            cv2.putText(img, "amir", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+           sp.markAttendence(id)
         elif( id == 5):
            cv2.putText(img, "shivam", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+           sp.markAttendence(id)
         elif( id == 6):
            cv2.putText(img, "Israr sir", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
-
-
+           sp.markAttendence(id)
         elif( id == 48):
            cv2.putText(img, "haimd", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+           sp.markAttendence(id)
         elif( id == 54):
            cv2.putText(img, "wasit", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+           sp.markAttendence(id)
         else:
            cv2.putText(img, "Face not recognized....!", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
 
@@ -64,9 +69,6 @@ def detect(img, faceCascade, img_id):
 faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 clf = cv2.face.LBPHFaceRecognizer_create()
 clf.read("classifier.yml")
-
-
-
 video_capture = cv2.VideoCapture(0)
 img_id  = 0
 while True:

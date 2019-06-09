@@ -1,8 +1,10 @@
 import cv2
 
-def generate_dataset(img, id, img_id):
-    cv2.imwrite("dataset/user." + str(id) + "." + str(img_id) + ".jpg", img)
+def generate_dataset(img, img_id):
+    global userId, userName
 
+    cv2.imwrite("dataset/" + userName + "." + str(userId) + "." + str(img_id) + ".jpg", img)
+  
 def draw_boundary(img, classifier, scaleFactor, minNeighbours, color,text):
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     
@@ -20,8 +22,8 @@ def detect(img, faceCascade, img_id):
     coords = draw_boundary(img, faceCascade, 1.1, 5, color['red'], "face")
     if len(coords) == 4:
         roi_img = img[coords[ 1] : coords[1]+coords[3],coords[0] : coords[0]+coords[2]]
-        user_id = 1 # change the user for each different users
-        generate_dataset(roi_img, user_id, img_id)
+        #user_id = 1 # change the user for each different users
+        generate_dataset(roi_img, img_id)
     return img
 
 # main
@@ -30,6 +32,8 @@ faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 videoCapture = cv2.VideoCapture(0)
 
 userId = int(input("Enter user id : "))
+userName = input("Enter user name : ")
+
 print("Press 'q' to stop creating dataSet.")
 print("Press any key to start...")
 input("")

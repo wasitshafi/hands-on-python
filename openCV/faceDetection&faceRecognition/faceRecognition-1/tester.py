@@ -13,15 +13,36 @@ def draw_boundary(img, classifier, scaleFactor, minNeighbours, color,text, clf):
         id, _= clf.predict(gray_img[y:y+h, x:x+w])
         
         id, confi= clf.predict(gray_img[y:y+h, x:x+w])
+
         print("userid = ", id, " confidence = " ,confi, end ="\n\n")
-        if(confi <=45):
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        """     if(confi <=45):
             if( id == 1):
-                cv2.putText(img, "wasit", (x,y-4), cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 1, cv2.LINE_AA)
+                cv2.putText(img, "wasit", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
             elif( id == 2):
-                cv2.putText(img, "shivam", (x,y-4), cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 1, cv2.LINE_AA)
+                cv2.putText(img, "shivam", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
         else:
-            cv2.putText(img, "Face not detected....!", (x,y-4), cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 1, cv2.LINE_AA)
-        
+            cv2.putText(img, "Face not detected....!", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+        """
+        if( id == 1):
+           cv2.putText(img, "shahid", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+        elif( id == 2):
+           cv2.putText(img, "salman", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+        elif( id == 3):
+           cv2.putText(img, "amir", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+        elif( id == 5):
+           cv2.putText(img, "shivam", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+        elif( id == 6):
+           cv2.putText(img, "Israr sir", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+
+
+        elif( id == 48):
+           cv2.putText(img, "haimd", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+        elif( id == 54):
+           cv2.putText(img, "wasit", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+        else:
+           cv2.putText(img, "Face not recognized....!", (x,y-4), font, 0.8, color, 1, cv2.LINE_AA)
+
         coords = [x, y, w, h]
     return coords
 def recognize(img, clf, faceCascade):

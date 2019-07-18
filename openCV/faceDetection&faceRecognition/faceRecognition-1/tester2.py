@@ -2,6 +2,7 @@ import cv2
 import spreadSheet as sp
 import numpy as np
 import urllib.request
+from PIL import Image
 
 def draw_boundary(img, classifier, scaleFactor, minNeighbours, color,text, clf):
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -165,7 +166,6 @@ while True:
     imgNp = np.array(bytearray(imgResp.read()), np.uint8)
     img = cv2.imdecode(imgNp, -1)
     cv2.imshow("face Detection", img)
-
     img = recognize(img, clf, faceCascade)
     cv2.imshow("face Detection", img)
     img_id = img_id + 1

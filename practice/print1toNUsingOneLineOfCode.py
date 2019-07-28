@@ -1,1 +1,0 @@
-print(*range(1, int(input('Enter Value of n : ')) + 1 ), sep = " ")

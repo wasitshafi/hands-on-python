@@ -1,0 +1,1 @@
+print(*range(1, int(input("Enter upper limit : ")) + 1  ), sep = " ")

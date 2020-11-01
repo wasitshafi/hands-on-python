@@ -22,4 +22,3 @@ z = str("hello")
 print ("x = ", x , ", type(x) =  ", type(x))
 print ("y = ", y , ", type(y) =  ", type(y))
 print ("z = ", z , ", type(z) =  ", type(z), end = "\n\n")
-

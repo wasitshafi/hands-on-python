@@ -7,7 +7,7 @@ x = d.datetime.now()
 #The date contains year, month, day, hour, minute, second, and microsecond.
 
 #print( "\nd.datetime.now() = ", d.datetime.now())
-print ("\ndate & time = ", x) 
+print ("\ndate & time = ", x)
 print ("\ntoday = ", x.today)
 print ("\nyear = ", x.year)
 

@@ -1,0 +1,3 @@
+1) NLP works on individual words not on sentences, so we need to break down the paragraph into tokens.
+2) We have to remove things that are not significant in NLP such as remove stop words, punctuations, uppercase to lowecase.
+3) Steps: make all text in lowercase => remove punctuations => remove stop words.
